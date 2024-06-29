@@ -14,7 +14,7 @@ struct LoginView: View {
         NavigationStack {
             VStack {
                 // image
-                Image("temp-logo")
+                Image("logo")
                     .resizable()
                     .scaledToFill()
                     .frame(width: 100, height: 120)
@@ -45,9 +45,9 @@ struct LoginView: View {
                         Image(systemName: "arrow.right")
                     }
                     .foregroundStyle(.white)
-                    .frame(width: UIScreen.main.bounds.width - 32, height: 48)
+                    .frame(width: UIScreen.main.bounds.width - 65, height: 48)
                 }
-                .background(Color(.systemPurple))
+                .background(Color(hex: "#EFCB68"))
                 .cornerRadius(10)
                 .padding(.top, 24)
                 
