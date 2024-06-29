@@ -1,9 +1,3 @@
-//
-//  LoginView.swift
-//  HeathiNEST
-//
-//  Created by Jessica Bellin on 29/06/24.
-//
 // Wrap inside navigation stack = move back and forth between login and sign up view
 import SwiftUI
 

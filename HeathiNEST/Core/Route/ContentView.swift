@@ -1,24 +1,26 @@
-//
-//  ContentView.swift
-//  HeathiNEST
-//
-//  Created by Jessica Bellin on 29/06/24.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            CalendarView()
+                .tabItem {
+                    Label ("Calendar", systemImage: "calendar")
+                }
+            HomeView()
+                .tabItem {
+                    Label ("Home", systemImage: "house")
+                }
+            ProfileView()
+                .tabItem {
+                    Label ("Profile", systemImage: "person.circle")
+                }
         }
-        .padding()
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView().environmentObject(CalendarViewModel())
+    }
 }
