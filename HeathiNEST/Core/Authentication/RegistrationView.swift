@@ -1,17 +1,3 @@
-//
-//  RegistrationView.swift
-//  HeathiNEST
-//
-//  Created by Jessica Bellin on 29/06/24.
-//
-
-//
-//  RegistrationView.swift
-//  HeathiNEST
-//
-//  Created by Jessica Bellin on 29/06/24.
-//
-
 import SwiftUI
 
 extension Color {
