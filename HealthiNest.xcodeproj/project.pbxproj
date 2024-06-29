@@ -8,18 +8,56 @@
 
 /* Begin PBXBuildFile section */
 		D907471A2C3064BF0048DB2C /* HealthiNestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90747192C3064BF0048DB2C /* HealthiNestApp.swift */; };
-		D907471C2C3064BF0048DB2C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D907471B2C3064BF0048DB2C /* ContentView.swift */; };
 		D907471E2C3064C00048DB2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D907471D2C3064C00048DB2C /* Assets.xcassets */; };
 		D90747222C3064C00048DB2C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D90747212C3064C00048DB2C /* Preview Assets.xcassets */; };
+		D907472A2C30654B0048DB2C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D90747292C30654B0048DB2C /* FirebaseAuth */; };
+		D907472C2C30654B0048DB2C /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = D907472B2C30654B0048DB2C /* FirebaseDatabase */; };
+		D907472E2C30654B0048DB2C /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D907472D2C30654B0048DB2C /* FirebaseDatabaseSwift */; };
+		D90747302C30654B0048DB2C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D907472F2C30654B0048DB2C /* FirebaseFirestore */; };
+		D90747322C30654B0048DB2C /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D90747312C30654B0048DB2C /* FirebaseFirestoreSwift */; };
+		D90747342C30654B0048DB2C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D90747332C30654B0048DB2C /* FirebaseStorage */; };
+		D90747412C3067090048DB2C /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90747402C3067090048DB2C /* InputView.swift */; };
+		D90747432C3067140048DB2C /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90747422C3067140048DB2C /* SettingsRowView.swift */; };
+		D90747472C30674B0048DB2C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90747462C30674B0048DB2C /* LoginView.swift */; };
+		D90747492C3067510048DB2C /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90747482C3067510048DB2C /* RegistrationView.swift */; };
+		D907474B2C3067590048DB2C /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D907474A2C3067590048DB2C /* AuthViewModel.swift */; };
+		D907474D2C3067660048DB2C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D907474C2C3067660048DB2C /* ProfileView.swift */; };
+		D907474F2C3067710048DB2C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D907474E2C3067710048DB2C /* ContentView.swift */; };
+		D90747512C3067D90048DB2C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90747502C3067D90048DB2C /* User.swift */; };
+		D90747562C306EE20048DB2C /* BreathingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90747552C306EE20048DB2C /* BreathingView.swift */; };
+		D90747622C3070DC0048DB2C /* FirstPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90747612C3070DC0048DB2C /* FirstPage.swift */; };
+		D90747642C30722B0048DB2C /* ToDoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90747632C30722A0048DB2C /* ToDoList.swift */; };
+		D90747662C3072530048DB2C /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90747652C3072530048DB2C /* CalenderView.swift */; };
+		D90747682C3072650048DB2C /* CalenderViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90747672C3072650048DB2C /* CalenderViewViewModel.swift */; };
+		D907476A2C3073F30048DB2C /* HealthTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90747692C3073F30048DB2C /* HealthTargetView.swift */; };
+		D907476C2C3074320048DB2C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D907476B2C3074320048DB2C /* HomeView.swift */; };
+		D907476E2C30745D0048DB2C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D907476D2C30745D0048DB2C /* SettingsView.swift */; };
+		D90747702C3077B90048DB2C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D907476F2C3077B90048DB2C /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D90747162C3064BF0048DB2C /* HealthiNest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthiNest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90747192C3064BF0048DB2C /* HealthiNestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthiNestApp.swift; sourceTree = "<group>"; };
-		D907471B2C3064BF0048DB2C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D907471D2C3064C00048DB2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D907471F2C3064C00048DB2C /* HealthiNest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HealthiNest.entitlements; sourceTree = "<group>"; };
 		D90747212C3064C00048DB2C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D90747402C3067090048DB2C /* InputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		D90747422C3067140048DB2C /* SettingsRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
+		D90747462C30674B0048DB2C /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D90747482C3067510048DB2C /* RegistrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		D907474A2C3067590048DB2C /* AuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		D907474C2C3067660048DB2C /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		D907474E2C3067710048DB2C /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "../../../../../Desktop/HeathiNEST copy/HeathiNEST/Core/Route/ContentView.swift"; sourceTree = "<group>"; };
+		D90747502C3067D90048DB2C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D90747552C306EE20048DB2C /* BreathingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingView.swift; sourceTree = "<group>"; };
+		D90747612C3070DC0048DB2C /* FirstPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPage.swift; sourceTree = "<group>"; };
+		D90747632C30722A0048DB2C /* ToDoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoList.swift; sourceTree = "<group>"; };
+		D90747652C3072530048DB2C /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
+		D90747672C3072650048DB2C /* CalenderViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewViewModel.swift; sourceTree = "<group>"; };
+		D90747692C3073F30048DB2C /* HealthTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTargetView.swift; sourceTree = "<group>"; };
+		D907476B2C3074320048DB2C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D907476D2C30745D0048DB2C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D907476F2C3077B90048DB2C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +65,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D90747322C30654B0048DB2C /* FirebaseFirestoreSwift in Frameworks */,
+				D907472E2C30654B0048DB2C /* FirebaseDatabaseSwift in Frameworks */,
+				D90747302C30654B0048DB2C /* FirebaseFirestore in Frameworks */,
+				D907472C2C30654B0048DB2C /* FirebaseDatabase in Frameworks */,
+				D907472A2C30654B0048DB2C /* FirebaseAuth in Frameworks */,
+				D90747342C30654B0048DB2C /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,10 +96,16 @@
 		D90747182C3064BF0048DB2C /* HealthiNest */ = {
 			isa = PBXGroup;
 			children = (
-				D90747192C3064BF0048DB2C /* HealthiNestApp.swift */,
-				D907471B2C3064BF0048DB2C /* ContentView.swift */,
+				D90747532C306EAA0048DB2C /* Calender */,
+				D90747522C306EA30048DB2C /* Breathing */,
+				D90747382C30658D0048DB2C /* Model */,
+				D90747372C3065880048DB2C /* Core */,
+				D90747542C306EB90048DB2C /* Home */,
+				D90747362C3065810048DB2C /* Components */,
+				D90747352C3065790048DB2C /* App */,
 				D907471D2C3064C00048DB2C /* Assets.xcassets */,
 				D907471F2C3064C00048DB2C /* HealthiNest.entitlements */,
+				D907476F2C3077B90048DB2C /* GoogleService-Info.plist */,
 				D90747202C3064C00048DB2C /* Preview Content */,
 			);
 			path = HealthiNest;
@@ -67,6 +117,112 @@
 				D90747212C3064C00048DB2C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D90747352C3065790048DB2C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D90747192C3064BF0048DB2C /* HealthiNestApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D90747362C3065810048DB2C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D90747402C3067090048DB2C /* InputView.swift */,
+				D90747422C3067140048DB2C /* SettingsRowView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D90747372C3065880048DB2C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D90747392C3065B50048DB2C /* Authentication */,
+				D907473A2C3065BE0048DB2C /* Profile */,
+				D907473B2C3065C40048DB2C /* Route */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D90747382C30658D0048DB2C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D90747502C3067D90048DB2C /* User.swift */,
+				D90747632C30722A0048DB2C /* ToDoList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D90747392C3065B50048DB2C /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				D90747452C30673B0048DB2C /* ViewModel */,
+				D90747442C3067360048DB2C /* View */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		D907473A2C3065BE0048DB2C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D907474C2C3067660048DB2C /* ProfileView.swift */,
+				D90747692C3073F30048DB2C /* HealthTargetView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		D907473B2C3065C40048DB2C /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				D907474E2C3067710048DB2C /* ContentView.swift */,
+				D90747612C3070DC0048DB2C /* FirstPage.swift */,
+			);
+			path = Route;
+			sourceTree = "<group>";
+		};
+		D90747442C3067360048DB2C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D90747482C3067510048DB2C /* RegistrationView.swift */,
+				D90747462C30674B0048DB2C /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D90747452C30673B0048DB2C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D907474A2C3067590048DB2C /* AuthViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D90747522C306EA30048DB2C /* Breathing */ = {
+			isa = PBXGroup;
+			children = (
+				D90747552C306EE20048DB2C /* BreathingView.swift */,
+			);
+			path = Breathing;
+			sourceTree = "<group>";
+		};
+		D90747532C306EAA0048DB2C /* Calender */ = {
+			isa = PBXGroup;
+			children = (
+				D90747652C3072530048DB2C /* CalenderView.swift */,
+				D90747672C3072650048DB2C /* CalenderViewViewModel.swift */,
+			);
+			path = Calender;
+			sourceTree = "<group>";
+		};
+		D90747542C306EB90048DB2C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D907476B2C3074320048DB2C /* HomeView.swift */,
+				D907476D2C30745D0048DB2C /* SettingsView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +241,14 @@
 			dependencies = (
 			);
 			name = HealthiNest;
+			packageProductDependencies = (
+				D90747292C30654B0048DB2C /* FirebaseAuth */,
+				D907472B2C30654B0048DB2C /* FirebaseDatabase */,
+				D907472D2C30654B0048DB2C /* FirebaseDatabaseSwift */,
+				D907472F2C30654B0048DB2C /* FirebaseFirestore */,
+				D90747312C30654B0048DB2C /* FirebaseFirestoreSwift */,
+				D90747332C30654B0048DB2C /* FirebaseStorage */,
+			);
 			productName = HealthiNest;
 			productReference = D90747162C3064BF0048DB2C /* HealthiNest.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +277,9 @@
 				Base,
 			);
 			mainGroup = D907470D2C3064BF0048DB2C;
+			packageReferences = (
+				D90747282C30654B0048DB2C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = D90747172C3064BF0048DB2C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -129,6 +296,7 @@
 			files = (
 				D90747222C3064C00048DB2C /* Preview Assets.xcassets in Resources */,
 				D907471E2C3064C00048DB2C /* Assets.xcassets in Resources */,
+				D90747702C3077B90048DB2C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +307,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D907471C2C3064BF0048DB2C /* ContentView.swift in Sources */,
+				D907474D2C3067660048DB2C /* ProfileView.swift in Sources */,
+				D90747562C306EE20048DB2C /* BreathingView.swift in Sources */,
+				D90747432C3067140048DB2C /* SettingsRowView.swift in Sources */,
+				D907476A2C3073F30048DB2C /* HealthTargetView.swift in Sources */,
+				D90747682C3072650048DB2C /* CalenderViewViewModel.swift in Sources */,
+				D907476E2C30745D0048DB2C /* SettingsView.swift in Sources */,
+				D90747412C3067090048DB2C /* InputView.swift in Sources */,
+				D90747662C3072530048DB2C /* CalenderView.swift in Sources */,
+				D907474B2C3067590048DB2C /* AuthViewModel.swift in Sources */,
+				D907474F2C3067710048DB2C /* ContentView.swift in Sources */,
+				D90747512C3067D90048DB2C /* User.swift in Sources */,
+				D90747642C30722B0048DB2C /* ToDoList.swift in Sources */,
+				D90747492C3067510048DB2C /* RegistrationView.swift in Sources */,
+				D90747472C30674B0048DB2C /* LoginView.swift in Sources */,
+				D907476C2C3074320048DB2C /* HomeView.swift in Sources */,
 				D907471A2C3064BF0048DB2C /* HealthiNestApp.swift in Sources */,
+				D90747622C3070DC0048DB2C /* FirstPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +538,50 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D90747282C30654B0048DB2C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.28.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D90747292C30654B0048DB2C /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D90747282C30654B0048DB2C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		D907472B2C30654B0048DB2C /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D90747282C30654B0048DB2C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		D907472D2C30654B0048DB2C /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D90747282C30654B0048DB2C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		D907472F2C30654B0048DB2C /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D90747282C30654B0048DB2C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		D90747312C30654B0048DB2C /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D90747282C30654B0048DB2C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		D90747332C30654B0048DB2C /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D90747282C30654B0048DB2C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D907470E2C3064BF0048DB2C /* Project object */;
 }
