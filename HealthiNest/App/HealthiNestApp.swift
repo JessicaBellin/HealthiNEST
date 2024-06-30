@@ -17,9 +17,3 @@ struct HealthiNestApp: App {
         }
     }
 }
-
-//struct HealthiNestApp_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HealthiNestApp()
-//    }
-//}
