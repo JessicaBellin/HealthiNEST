@@ -1,25 +1,33 @@
 import SwiftUI
 
-struct BreathingView: View {
+struct ExerciseView: View {
     @State private var isAnimating = false
     @State private var animationProgress: CGFloat = 1.0
-    @State private var breatheText = ""
-    @State private var breatheTextOpacity: Double = 1.0
+    @State private var exerciseText = ""
+    @State private var exerciseTextOpacity: Double = 1.0
     @State private var countdownText = ""
     @State private var timer: Timer?
     @State private var countdownTimer: Timer?
     @State private var remainingTime: TimeInterval = 2 * 60
     @State private var countdownTime = 3
     
-    let customBlue = Color(hex: 0x7BD1DC)
     
+    let customBlue = Color(hex: 0x7BD1DC)
+    let exercises = [ "Neck Stretch", "Push Ups", "Jumping Jacks", "Planks"]
+    let instructions = [
+        "Sit or stand upright and slowly tilt your head towards your shoulder.",
+        "Keep your body straight, lower your body until your chest almost touches the floor, then push back up.",
+        "Jump to a position with legs spread and hands touching overhead, then return to a standing position.",
+        "Hold your body in a straight line, supported by your toes and forearms."
+    ]
+    @State private var exerciseIndex = 0
+
     var body: some View {
         VStack {
-            Text("2 Minute Breathing Exercise")
+            Text(exercises[exerciseIndex])
                 .font(.system(size: 23))
                 .multilineTextAlignment(.center)
                 .foregroundColor(.black)
-                .padding()
                 .padding()
                 .padding()
             
@@ -35,12 +43,12 @@ struct BreathingView: View {
                     .rotationEffect(.degrees(-90))
                 
                 if isAnimating {
-                    Text(breatheText)
+                    Text(exerciseText)
                         .font(.title)
                         .foregroundColor(.gray)
                         .fontWeight(.bold)
-                        .opacity(breatheTextOpacity)
-                        .animation(.easeInOut(duration: 0.3), value: breatheTextOpacity)
+                        .opacity(exerciseTextOpacity)
+                        .animation(.easeInOut(duration: 0.3), value: exerciseTextOpacity)
                 } else {
                     Text(countdownText)
                         .font(.title)
@@ -56,26 +64,33 @@ struct BreathingView: View {
             
             Button(action: {
                 if self.isAnimating {
-                    self.stopBreathing()
+                    self.stopExercise()
                 } else {
                     self.startCountdown()
                 }
             }) {
-                Text(self.isAnimating ? "Stop Breathing" : "Start Breathing")
+                Text(self.isAnimating ? "Stop Exercise" : "Start Exercise")
                     .foregroundColor(.white)
                     .padding()
                     .background(customBlue)
                     .cornerRadius(10)
             }
             .padding()
-            
-            Text("Follow the text for breathing guidance")
+        
+            Text(instructions[exerciseIndex])
                 .font(.headline)
                 .foregroundColor(.gray)
                 .padding()
             
+            Button(action: {
+                self.exerciseIndex = (self.exerciseIndex + 1) % self.exercises.count
+            }) {
+                Image(systemName: "arrow.right.circle")
+                    .font(.title)
+                    .padding()
+            }
+
         }
-            .padding(.bottom, 95)
     }
     
     func startCountdown() {
@@ -88,24 +103,24 @@ struct BreathingView: View {
             } else {
                 timer.invalidate()
                 self.countdownText = ""
-                self.startBreathing()
+                self.startExercise()
             }
         }
     }
     
-    func startBreathing() {
+    func startExercise() {
         self.isAnimating = true
-        self.breatheText = "Inhale"  // Start with Inhale
+        self.exerciseText = "Start"  // Start with Start
         self.remainingTime = 2 * 60
         self.animationProgress = 1.0
         withAnimation(Animation.linear(duration: remainingTime)) {
             self.animationProgress = 0.0
         }
-        self.animateBreathingText()
+        self.animateExerciseText()
         self.startTimer()
     }
     
-    func stopBreathing() {
+    func stopExercise() {
         self.isAnimating = false
         self.timer?.invalidate()
         self.timer = nil
@@ -114,63 +129,52 @@ struct BreathingView: View {
         withAnimation {
             self.animationProgress = 1.0
         }
-        self.breatheText = ""
+        self.exerciseText = ""
         self.remainingTime = 2 * 60
     }
     
-    func animateBreathingText() {
+    func animateExerciseText() {
         self.timer?.invalidate()
         self.timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { _ in
-            self.changeBreathText()
+            self.changeExerciseText()
         }
         // Don't call timer.fire() here to avoid immediate change
     }
     
-    func changeBreathText() {
-            withAnimation(.easeInOut(duration: 0.3)) {
-                self.breatheTextOpacity = 0
-            }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                self.breatheText = (self.breatheText == "Inhale") ? "Exhale" : "Inhale"
-                withAnimation(.easeInOut(duration: 0.3)) {
-                    self.breatheTextOpacity = 1
-                }
-            }
+    func changeExerciseText() {
+        withAnimation(.easeInOut(duration: 0.3)) {
+            self.exerciseTextOpacity = 0
         }
         
-        func startTimer() {
-            self.countdownTimer?.invalidate()
-            self.countdownTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-                if self.remainingTime > 0 {
-                    self.remainingTime -= 1
-                } else {
-                    self.stopBreathing()
-                }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+//            self.exerciseText = (self.exerciseText == "Start") ? "Stop" : "Start"
+//            withAnimation(.easeInOut(duration: 0.3)) {
+//                self.exerciseTextOpacity = 1
+//            }
+//        }
+    }
+    
+    func startTimer() {
+        self.countdownTimer?.invalidate()
+        self.countdownTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+            if self.remainingTime > 0 {
+                self.remainingTime -= 1
+            } else {
+                self.stopExercise()
             }
         }
-        
-        func formatTime(_ timeInterval: TimeInterval) -> String {
-            let minutes = Int(timeInterval) / 60
-            let seconds = Int(timeInterval) % 60
-            return String(format: "%02d:%02d", minutes, seconds)
-        }
     }
-
-    extension Color {
-        init(hex: UInt, alpha: Double = 1) {
-            self.init(
-                .sRGB,
-                red: Double((hex >> 16) & 0xff) / 255,
-                green: Double((hex >> 08) & 0xff) / 255,
-                blue: Double((hex >> 00) & 0xff) / 255,
-                opacity: alpha
-            )
-        }
+    
+    func formatTime(_ timeInterval: TimeInterval) -> String {
+        let minutes = Int(timeInterval) / 60
+        let seconds = Int(timeInterval) % 60
+        return String(format: "%02d:%02d", minutes, seconds)
     }
+}
 
-struct BreathingView_Previews: PreviewProvider {
+
+struct ExerciseView_Previews: PreviewProvider {
     static var previews: some View {
-        BreathingView()
+        ExerciseView()
     }
 }

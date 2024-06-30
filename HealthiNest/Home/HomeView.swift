@@ -1,10 +1,3 @@
-//
-//  HomeView.swift
-//  HealthiNest
-//
-//  Created by Jessica Bellin on 30/06/24.
-//
-
 import SwiftUI
 
 struct HomeView: View {
@@ -12,40 +5,48 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            ZStack {
+                Text("⚡0")
+                    .font(.system(size: 30))
+                    .offset(x: 130, y: -337)
                 VStack {
-                    Text("Hours of Sleep")
-                    Slider(value: $viewModel.hoursOfSleep, in: 1...15, step: 1)
-                    Text("\(Int(viewModel.hoursOfSleep)) hours")
-                }
-                .padding()
-                
-                VStack {
-                    Text("Healthiness of Food")
-                    Slider(value: $viewModel.foodHealthiness, in: 1...5, step: 1)
-                    Text("\(Int(viewModel.foodHealthiness))")
-                }
-                .padding()
-                
-                List {
-                    ForEach(viewModel.tasks) { task in
-                        HStack {
-                            Text(task.title)
-                            Spacer()
-                            Button(action: {
-                                viewModel.toggleTaskCompletion(task)
-                            }) {
-                                Image(systemName: task.isCompleted ? "checkmark.circle.fill" : "circle")
+                    VStack {
+                        Text("Hours of Sleep")
+                        Slider(value: $viewModel.hoursOfSleep, in: 1...15, step: 1)
+                        Text("\(Int(viewModel.hoursOfSleep)) hours")
+                    }
+                    .padding()
+                    
+                    VStack {
+                        Text("Healthiness of Food")
+                        Slider(value: $viewModel.foodHealthiness, in: 1...5, step: 1)
+                        Text("\(Int(viewModel.foodHealthiness))")
+                    }
+                    .padding()
+                    
+                    List {
+                        ForEach(viewModel.tasks) { task in
+                            HStack {
+                                Text(task.title)
+                                Spacer()
+                                Button(action: {
+                                    viewModel.toggleTaskCompletion(task)
+                                }) {
+                                    Image(systemName: task.isCompleted ? "checkmark.circle.fill" : "circle")
+                                }
+                                .foregroundColor(task.isCompleted ? .green : .red)
                             }
-                            .foregroundColor(task.isCompleted ? .green : .red)
                         }
                     }
+                    
+                    NavigationLink("Set Your Goals", destination: SettingsView())
+                        .padding(.bottom, 20)
+                    
+                    
                 }
-                
-                NavigationLink("Set Your Goals", destination: SettingsView())
-                    .padding()
+                .navigationTitle("Home")
+                .padding()
             }
-            .navigationTitle("Home")
         }
     }
 }

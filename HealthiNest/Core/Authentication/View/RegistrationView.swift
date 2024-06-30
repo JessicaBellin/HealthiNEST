@@ -10,97 +10,125 @@ struct RegistrationView: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var viewModel: AuthViewModel
     
+    @State private var isCreatingUser = false
+    @State private var navigateToProfile = false
+    
     var body: some View {
-        VStack {
-            // LOGO IMAGE
-            Image("logo")
-                .resizable()
-                .scaledToFill()
-                .frame(width: 100, height: 120)
-                .padding(.vertical, 32)
-            
-            // FORM FIELDS
-            VStack(spacing: 24) {
-                InputView(text: $email,
-                          title: "Email Address",
-                          placeholder: "name@example.com")
-                .textInputAutocapitalization(.none)
-                
-                InputView(text: $fullname,
-                          title: "Fullname",
-                          placeholder: "Enter your name")
-                
-                InputView(text: $password,
-                          title: "Password",
-                          placeholder: "Enter your password",
-                          isSecureField: true)
-                
-                ZStack(alignment: .trailing) {
-                    InputView(text: $confirmPassword,
-                              title: "Confirm Password",
-                              placeholder: "Confirm Password",
-                              isSecureField: true)
+        NavigationView{
+            ZStack{
+                VStack {
+                    // LOGO IMAGE
+                    Image("logo")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 100, height: 120)
+                        .padding(.vertical, 32)
                     
-                    if !password.isEmpty && !confirmPassword.isEmpty {
-                        if password == confirmPassword {
-                            Image(systemName: "checkmark.circle.fill")
-                                .imageScale(.large)
-                                .fontWeight(.bold)
-                                .foregroundStyle(Color(.systemGreen))
-                        } else {
-                            Image(systemName: "xmark.circle.fill")
-                                .imageScale(.large)
-                                .fontWeight(.bold)
-                                .foregroundStyle(Color(.systemRed))
+                    // FORM FIELDS
+                    VStack(spacing: 24) {
+                        InputView(text: $email,
+                                  title: "Email Address",
+                                  placeholder: "name@example.com")
+                        .textInputAutocapitalization(.none)
+                        
+                        InputView(text: $fullname,
+                                  title: "Fullname",
+                                  placeholder: "Enter your name")
+                        
+                        InputView(text: $password,
+                                  title: "Password",
+                                  placeholder: "Enter your password",
+                                  isSecureField: true)
+                        
+                        ZStack(alignment: .trailing) {
+                            InputView(text: $confirmPassword,
+                                      title: "Confirm Password",
+                                      placeholder: "Confirm Password",
+                                      isSecureField: true)
+                            
+                            if !password.isEmpty && !confirmPassword.isEmpty {
+                                if password == confirmPassword {
+                                    Image(systemName: "checkmark.circle.fill")
+                                        .imageScale(.large)
+                                        .fontWeight(.bold)
+                                        .foregroundStyle(Color(.systemGreen))
+                                } else {
+                                    Image(systemName: "xmark.circle.fill")
+                                        .imageScale(.large)
+                                        .fontWeight(.bold)
+                                        .foregroundStyle(Color(.systemRed))
+                                }
+                            }
+                        }
+                        
+                        
+                        
+                        // SIGN UP BUTTON
+                        Button {
+                            Task {
+                                do {
+                                    try await createUser()
+                                    navigateToProfile = true
+                
+                                    
+                                } catch {
+                                    errorMessage = error.localizedDescription
+                                    showAlert = true
+                                }
+                            }
+                        } label: {
+                            HStack {
+                                Text("SIGN UP")
+                                    .fontWeight(.semibold)
+                                Image(systemName: "arrow.right")
+                            }
+                            .foregroundStyle(.black)
+                            .frame(width: UIScreen.main.bounds.width - 90, height: 35)
+                        }
+                        .background(Color.blue.opacity(0.2))
+                        .disabled(!formIsValid)
+                        .opacity(formIsValid ? 1.0 : 0.5)
+                        .onChange(of: navigateToProfile) { newValue in
+                            if newValue {
+                                NavigationLink(destination: ProfileView(), isActive: $navigateToProfile) {
+                                    EmptyView()
+                                }
+                            }
+                            
+                        }
+                        .cornerRadius(10)
+                        .padding(.top, 24)
+                        .alert(isPresented: $showAlert) {
+                            Alert(title: Text("Sign Up Failed"), message: Text(errorMessage ?? "Unknown error"), dismissButton: .default(Text("OK")))
+                        }
+                        
+                        
+                        Button {
+                            dismiss()
+                        } label: {
+                            HStack(spacing: 10) {
+                                Text("Already have an account?")
+                                Text("Sign in")
+                                    .fontWeight(.bold)
+                            }
+                            .font(.system(size: 14))
                         }
                     }
-                }
-                
-                // SIGN UP BUTTON
-                Button {
-                    Task {
-                        do {
-                            try await viewModel.createUser(withEmail: email,
-                                                           password: password,
-                                                           fullname: fullname)
-                        } catch {
-                            errorMessage = error.localizedDescription
-                            showAlert = true
-                        }
-                    }
-                } label: {
-                    HStack {
-                        Text("SIGN UP")
-                            .fontWeight(.semibold)
-                        Image(systemName: "arrow.right")
-                    }
-                    .foregroundStyle(.black)
-                    .frame(width: UIScreen.main.bounds.width - 90, height: 35)
-                }
-                .background(Color.blue.opacity(0.2))
-                .disabled(!formIsValid)
-                .opacity(formIsValid ? 1.0 : 0.5)
-                .cornerRadius(10)
-                .padding(.top, 24)
-                .alert(isPresented: $showAlert) {
-                    Alert(title: Text("Sign Up Failed"), message: Text(errorMessage ?? "Unknown error"), dismissButton: .default(Text("OK")))
-                }
-                
-                Button {
-                    dismiss()
-                } label: {
-                    HStack(spacing: 10) {
-                        Text("Already have an account?")
-                        Text("Sign in")
-                            .fontWeight(.bold)
-                    }
-                    .font(.system(size: 14))
+                    .padding()
+                    .background(Color.white.opacity(0.6))
+                    .padding(.horizontal, 10)
                 }
             }
-            .padding()
-            .background(Color.white.opacity(0.6))
-            .padding(.horizontal, 10)
         }
+    }
+    
+    private func createUser() async throws {
+        isCreatingUser = true
+        defer { isCreatingUser = false }
+        
+        try await viewModel.createUser(withEmail: email,
+                                       password: password,
+                                       fullname: fullname)
     }
 }
 

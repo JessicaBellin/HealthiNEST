@@ -1,9 +1,3 @@
-//
-//  AuthViewModel.swift
-//  HeathiNEST
-//
-//  Created by Jessica Bellin on 29/06/24.
-//
 // 1. Having all functionalities associated with authenticating our user
 // 2. Updating our UI when we need to update it
 import Foundation

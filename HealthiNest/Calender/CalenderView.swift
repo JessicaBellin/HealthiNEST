@@ -1,62 +1,47 @@
-//
-//  CalenderView.swift
-//  HealthiNest
-//
-//  Created by Jessica Bellin on 30/06/24.
-//
-
 import SwiftUI
 
+
+
 struct CalendarView: View {
-    @EnvironmentObject var viewModel: CalendarViewModel
+    @EnvironmentObject var viewmodel: CalendarViewModel
     @State private var newActivityTitle = ""
     
     var body: some View {
         NavigationView {
             VStack {
-                DatePicker("Select Date", selection: $viewModel.selectedDate, displayedComponents: [.date])
+                DatePicker("Select Date", selection: $viewmodel.selectedDate, displayedComponents: [.date])
                     .datePickerStyle(GraphicalDatePickerStyle())
                 
-                List {
-                    ForEach(viewModel.activities[viewModel.selectedDate] ?? []) { activity in
-                        Text(activity.title)
-                            .onTapGesture {
-                                viewModel.removeActivity(activity, from: viewModel.selectedDate)
-                            }
-                    }
-                }
+                Spacer()
                 
-                HStack {
-                    TextField("New Activity", text: $newActivityTitle)
-                    Button("Add") {
-                        viewModel.addActivity(title: newActivityTitle, for: viewModel.selectedDate)
-                        newActivityTitle = ""
-                    }
-                }
-                .padding()
-                
-                ZStack {
-                    Rectangle()
+                ZStack(alignment: .leading) {
+                    RoundedRectangle(cornerRadius: 25.0)
                         .fill(Color.gray.opacity(0.3))
-                        .frame(height: 20)
-                    Rectangle()
-                        .fill(Color.green)
-                        .frame(width: CGFloat(viewModel.completionPercentage() * UIScreen.main.bounds.width), height: 20)
-                }
-                .padding()
-                Button("Check Day Completion") {
-                                    if viewModel.isDayCompleted() {
-                                        print("Day Completed! Points: \(viewModel.points)")
-                                    } else {
-                                        print("Day not completed.")
-                                    }
-                                }
-                            }
-                            .navigationTitle("Calendar")
-                            .padding(20)
-                        }
+                        .frame(height: 30)
+                    
+                    GeometryReader { geometry in
+                        RoundedRectangle(cornerRadius: 25.0)
+                            .fill(Color.green)
+                            .frame(width: min(CGFloat(viewmodel.completionPercentage()) * geometry.size.width * 1.19, geometry.size.width), height: 30)
                     }
                 }
+                .frame(height: 30)
+                .padding(.horizontal)
+                .padding(.bottom, 40)
+                
+//                Button("Check Day Completion") {
+//                    if viewModel.isDayCompleted() {
+//                        print("Day Completed! Points: \(viewModel.points)")
+//                    } else {
+//                        print("Day not completed.")
+//                    }
+//                }
+            }
+            .navigationTitle("Calendar")
+            .padding(20)
+        }
+    }
+}
 
 struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {

@@ -33,6 +33,9 @@
 		D907476C2C3074320048DB2C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D907476B2C3074320048DB2C /* HomeView.swift */; };
 		D907476E2C30745D0048DB2C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D907476D2C30745D0048DB2C /* SettingsView.swift */; };
 		D90747702C3077B90048DB2C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D907476F2C3077B90048DB2C /* GoogleService-Info.plist */; };
+		D99BBA672C309F9B007CAC41 /* MainHomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99BBA662C309F9B007CAC41 /* MainHomePageView.swift */; };
+		D99BBA692C30A269007CAC41 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99BBA682C30A269007CAC41 /* ActivityView.swift */; };
+		D99BBA6B2C30A9FC007CAC41 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99BBA6A2C30A9FC007CAC41 /* ExerciseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		D907476B2C3074320048DB2C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D907476D2C30745D0048DB2C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D907476F2C3077B90048DB2C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D99BBA662C309F9B007CAC41 /* MainHomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomePageView.swift; sourceTree = "<group>"; };
+		D99BBA682C30A269007CAC41 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		D99BBA6A2C30A9FC007CAC41 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				D907474E2C3067710048DB2C /* ContentView.swift */,
+				D99BBA662C309F9B007CAC41 /* MainHomePageView.swift */,
 				D90747612C3070DC0048DB2C /* FirstPage.swift */,
 			);
 			path = Route;
@@ -203,6 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				D90747552C306EE20048DB2C /* BreathingView.swift */,
+				D99BBA682C30A269007CAC41 /* ActivityView.swift */,
+				D99BBA6A2C30A9FC007CAC41 /* ExerciseView.swift */,
 			);
 			path = Breathing;
 			sourceTree = "<group>";
@@ -311,6 +320,7 @@
 				D90747562C306EE20048DB2C /* BreathingView.swift in Sources */,
 				D90747432C3067140048DB2C /* SettingsRowView.swift in Sources */,
 				D907476A2C3073F30048DB2C /* HealthTargetView.swift in Sources */,
+				D99BBA6B2C30A9FC007CAC41 /* ExerciseView.swift in Sources */,
 				D90747682C3072650048DB2C /* CalenderViewViewModel.swift in Sources */,
 				D907476E2C30745D0048DB2C /* SettingsView.swift in Sources */,
 				D90747412C3067090048DB2C /* InputView.swift in Sources */,
@@ -319,7 +329,9 @@
 				D907474F2C3067710048DB2C /* ContentView.swift in Sources */,
 				D90747512C3067D90048DB2C /* User.swift in Sources */,
 				D90747642C30722B0048DB2C /* ToDoList.swift in Sources */,
+				D99BBA692C30A269007CAC41 /* ActivityView.swift in Sources */,
 				D90747492C3067510048DB2C /* RegistrationView.swift in Sources */,
+				D99BBA672C309F9B007CAC41 /* MainHomePageView.swift in Sources */,
 				D90747472C30674B0048DB2C /* LoginView.swift in Sources */,
 				D907476C2C3074320048DB2C /* HomeView.swift in Sources */,
 				D907471A2C3064BF0048DB2C /* HealthiNestApp.swift in Sources */,
@@ -450,9 +462,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HealthiNest/HealthiNest.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HealthiNest/Preview Content\"";
+				DEVELOPMENT_TEAM = RCNW838ASY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -486,9 +500,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HealthiNest/HealthiNest.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HealthiNest/Preview Content\"";
+				DEVELOPMENT_TEAM = RCNW838ASY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;

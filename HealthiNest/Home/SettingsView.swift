@@ -1,10 +1,3 @@
-//
-//  SettingsView.swift
-//  HealthiNest
-//
-//  Created by Jessica Bellin on 30/06/24.
-//
-
 import SwiftUI
 
 struct SettingsView: View {

@@ -1,15 +1,10 @@
-//
-//  HeathiNESTApp.swift
-//  HeathiNEST
-//
-
 import SwiftUI
 import Firebase
 
 @main
-struct HeathiNESTApp: App {
+struct HealthiNestApp: App {
     @StateObject var viewModel = AuthViewModel() // environment object, GETS INITIALIZED ONCE
-    
+    @StateObject private var viewmodel = CalendarViewModel()
     init() {
         FirebaseApp.configure()
     }
@@ -18,6 +13,13 @@ struct HeathiNESTApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(viewModel)
+                .environmentObject(viewmodel)
         }
     }
 }
+
+//struct HealthiNestApp_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HealthiNestApp()
+//    }
+//}

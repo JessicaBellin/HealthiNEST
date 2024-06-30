@@ -1,12 +1,17 @@
 import SwiftUI
 
-struct FirstPage: View {
+struct MainHomePageView: View {
+
     var body: some View {
         TabView {
+            ActivityView()
+                .tabItem {
+                    Label ("Activity", systemImage: "dumbbell")
+                }
             CalendarView()
                 .tabItem {
                     Label ("Calendar", systemImage: "calendar")
-                }
+            }
             HomeView()
                 .tabItem {
                     Label ("Home", systemImage: "house")
@@ -19,9 +24,10 @@ struct FirstPage: View {
     }
 }
 
-struct FirstPage_Previews: PreviewProvider {
+struct MainHomePageView_Previews: PreviewProvider {
     static var previews: some View {
-        FirstPage().environmentObject(CalendarViewModel())
-        FirstPage().environmentObject(AuthViewModel())
+        MainHomePageView()
+            .environmentObject(AuthViewModel())
+            .environmentObject(CalendarViewModel()) // Add the environment object here
     }
 }
